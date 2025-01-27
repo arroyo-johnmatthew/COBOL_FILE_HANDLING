@@ -6,7 +6,7 @@
        INPUT-OUTPUT SECTION.
        FILE-CONTROL.
       *ASSIGNING THE FILE TO THE LOCATION
-           SELECT Regi-Form ASSIGN TO "C:\Users\Ellen\Desktop\Form.txt"
+           SELECT Regi-Form ASSIGN TO "form.txt"
       *SETTING UP THE FILE ORGANIZATION
                ORGANIZATION IS LINE SEQUENTIAL.
 
@@ -40,16 +40,19 @@
                DISPLAY X"1B" & "[31m ---choose a program to enroll---"
       *SET THE COLOR TO WHITE
                DISPLAY X"1B" & "[0m" "1. BSIT"
-               DISPLAY "2. BSECE"
-               DISPLAY "3. BSA"
-               DISPLAY "4. BSBA"
-               DISPLAY "5. BSED"
-               DISPLAY "6. BSOA"
+               DISPLAY "2. BSOA"
+               DISPLAY "3. BSBA-MM"
+               DISPLAY "4. BSBA-HRM"
+               DISPLAY "5. BSED-English"
+               DISPLAY "6. BSED-Math"
+               DISPLAY "7. BSME"
+               DISPLAY "8. BSECE"
+               DISPLAY "9. BSPsych"
                DISPLAY X"1B" & "[31m" "-----for diploma courses------"
-               DISPLAY X"1B" & "[0m" "7. DIT"
-               DISPLAY "8. DOMT"
+               DISPLAY X"1B" & "[0m" "10. DIT"
+               DISPLAY "11. DOMT"
                DISPLAY X"1B" & "[32m" "********************************"
-               DISPLAY X"1B" & "[0m" "Enter your choice: "
+               DISPLAY X"1B" & "[0m" "Enter your choice: "NO ADVANCING
                ACCEPT User-Choice
       *CONDITIONS TO CHECK THE USER'S COURSE CHOICE     
            IF User-Choice = 1   
@@ -64,42 +67,6 @@
                DISPLAY X"1B" & "[2J" 
                DISPLAY X"1B" & "[H"   
            ELSE IF User-Choice = 2
-               MOVE "---- Course: BSECE ----" TO Regi-Item
-               WRITE Regi-Info
-               DISPLAY " "
-               DISPLAY X"1B" & "[32m" "You enrolled in: BSECE"
-               DISPLAY X"1B" & "[0m" "Press Enter to continue..."
-               ACCEPT User-Choice
-               DISPLAY X"1B" & "[2J" 
-               DISPLAY X"1B" & "[H"   
-           ELSE IF User-Choice = 3
-               MOVE "---- Course: BSA ----" TO Regi-Item
-               WRITE Regi-Info
-               DISPLAY " "
-               DISPLAY X"1B" & "[32m" "You enrolled in: BSA"
-               DISPLAY X"1B" & "[0m" "Press Enter to continue..."
-               ACCEPT User-Choice
-               DISPLAY X"1B" & "[2J" 
-               DISPLAY X"1B" & "[H"   
-           ELSE IF User-Choice = 4
-               MOVE "---- Course: BSBA ----" TO Regi-Item
-               WRITE Regi-Info
-               DISPLAY " "
-               DISPLAY X"1B" & "[32m" "You enrolled in: BSBA"
-               DISPLAY X"1B" & "[0m" "Press Enter to continue..."
-               ACCEPT User-Choice
-               DISPLAY X"1B" & "[2J" 
-               DISPLAY X"1B" & "[H"   
-           ELSE IF User-Choice = 5
-               MOVE "---- Course: BSED ----" TO Regi-Item
-               WRITE Regi-Info
-               DISPLAY " "
-               DISPLAY X"1B" & "[32m" "You enrolled in: BSED"
-               DISPLAY X"1B" & "[0m" "Press Enter to continue..."
-               ACCEPT User-Choice
-               DISPLAY X"1B" & "[2J" 
-               DISPLAY X"1B" & "[H"   
-           ELSE IF User-Choice = 6
                MOVE "---- Course: BSOA ----" TO Regi-Item
                WRITE Regi-Info
                DISPLAY " "
@@ -108,7 +75,70 @@
                ACCEPT User-Choice
                DISPLAY X"1B" & "[2J" 
                DISPLAY X"1B" & "[H"   
+           ELSE IF User-Choice = 3
+               MOVE "---- Course: BSBA-MM ----" TO Regi-Item
+               WRITE Regi-Info
+               DISPLAY " "
+               DISPLAY X"1B" & "[32m" "You enrolled in: BSBA-MM"
+               DISPLAY X"1B" & "[0m" "Press Enter to continue..."
+               ACCEPT User-Choice
+               DISPLAY X"1B" & "[2J" 
+               DISPLAY X"1B" & "[H"   
+           ELSE IF User-Choice = 4
+               MOVE "---- Course: BSBA-HRM ----" TO Regi-Item
+               WRITE Regi-Info
+               DISPLAY " "
+               DISPLAY X"1B" & "[32m" "You enrolled in: BSBA-HRM"
+               DISPLAY X"1B" & "[0m" "Press Enter to continue..."
+               ACCEPT User-Choice
+               DISPLAY X"1B" & "[2J" 
+               DISPLAY X"1B" & "[H"   
+           ELSE IF User-Choice = 5
+               MOVE "---- Course: BSED-English ----" TO Regi-Item
+               WRITE Regi-Info
+               DISPLAY " "
+               DISPLAY X"1B" & "[32m" "You enrolled in: BSED-English"
+               DISPLAY X"1B" & "[0m" "Press Enter to continue..."
+               ACCEPT User-Choice
+               DISPLAY X"1B" & "[2J" 
+               DISPLAY X"1B" & "[H"   
+           ELSE IF User-Choice = 6
+               MOVE "---- Course: BSED-Math ----" TO Regi-Item
+               WRITE Regi-Info
+               DISPLAY " "
+               DISPLAY X"1B" & "[32m" "You enrolled in: BSED-Math"
+               DISPLAY X"1B" & "[0m" "Press Enter to continue..."
+               ACCEPT User-Choice
+               DISPLAY X"1B" & "[2J" 
+               DISPLAY X"1B" & "[H"  
            ELSE IF User-Choice = 7
+               MOVE "---- Course: BSME ----" TO Regi-Item
+               WRITE Regi-Info
+               DISPLAY " "
+               DISPLAY X"1B" & "[32m" "You enrolled in: BSME"
+               DISPLAY X"1B" & "[0m" "Press Enter to continue..."
+               ACCEPT User-Choice
+               DISPLAY X"1B" & "[2J" 
+               DISPLAY X"1B" & "[H"              
+           ELSE IF User-Choice = 8
+               MOVE "---- Course: BSECE ----" TO Regi-Item
+               WRITE Regi-Info
+               DISPLAY " "
+               DISPLAY X"1B" & "[32m" "You enrolled in: BSECE"
+               DISPLAY X"1B" & "[0m" "Press Enter to continue..."
+               ACCEPT User-Choice
+               DISPLAY X"1B" & "[2J" 
+               DISPLAY X"1B" & "[H"  
+           ELSE IF User-Choice = 9
+               MOVE "---- Course: BSPsych ----" TO Regi-Item
+               WRITE Regi-Info
+               DISPLAY " "
+               DISPLAY X"1B" & "[32m" "You enrolled in: BSPsych"
+               DISPLAY X"1B" & "[0m" "Press Enter to continue..."
+               ACCEPT User-Choice
+               DISPLAY X"1B" & "[2J" 
+               DISPLAY X"1B" & "[H" 
+           ELSE IF User-Choice = 10
                MOVE "---- Course: DIT ----" TO Regi-Item
                WRITE Regi-Info
                DISPLAY " "
@@ -117,7 +147,7 @@
                ACCEPT User-Choice
                DISPLAY X"1B" & "[2J" 
                DISPLAY X"1B" & "[H"   
-           ELSE IF User-Choice = 8
+           ELSE IF User-Choice = 11
                MOVE "---- Course: DOMT ----" TO Regi-Item
                WRITE Regi-Info
                DISPLAY " "
@@ -157,7 +187,7 @@
                DISPLAY "J. 4-2"
                DISPLAY "(press X to go to main menu)"
                DISPLAY X"1B" & "[32m" "********************************"
-               DISPLAY X"1B" & "[0m" "Enter your choice: "
+               DISPLAY X"1B" & "[0m" "Enter your choice: "NO ADVANCING
                ACCEPT User-Choice
       *CONDITIONS TO CHECK THE USER'S CHOICE OF YEAR AND SECTION
            IF User-Choice = "A" OR User-Choice = "a"
@@ -276,7 +306,7 @@
                DISPLAY "3. Third Semester"
                DISPLAY "(press X to go to main menu)"
                DISPLAY X"1B" & "[32m" "********************************"
-               DISPLAY X"1B" & "[0m" "Enter your choice: "
+               DISPLAY X"1B" & "[0m" "Enter your choice: "NO ADVANCING
                ACCEPT User-Choice
       *CONDITIONS TO CHECK THE USER'S CHOICE OF SEMESTER
            IF User-Choice = 1
