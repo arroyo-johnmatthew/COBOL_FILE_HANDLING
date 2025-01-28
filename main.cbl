@@ -6,7 +6,7 @@
        INPUT-OUTPUT SECTION.
        FILE-CONTROL.
       *ASSIGNING THE FILE TO THE LOCATION
-           SELECT Regi-Form ASSIGN TO "form.txt"
+           SELECT Regi-Form ASSIGN TO "regicard.txt"
       *SETTING UP THE FILE ORGANIZATION
                ORGANIZATION IS LINE SEQUENTIAL.
 
@@ -416,7 +416,7 @@
            CLOSE Regi-Form
       *LETS THE USER KNOW THAT THE INFORMATION IS SAVED IN THE .TXT FILE
            DISPLAY " "
-           DISPLAY "*Information saved at Form.txt*"
+           DISPLAY "*Information saved at Regicard.txt*"
            STOP RUN.
 
 
