@@ -6,7 +6,8 @@
        INPUT-OUTPUT SECTION.
        FILE-CONTROL.
       *ASSIGNING THE FILE TO THE LOCATION
-           SELECT Regi-Form ASSIGN TO "regicard.txt"
+           SELECT Regi-Form ASSIGN TO 
+           "C:\Users\Ellen\Desktop\regicard.txt"
       *SETTING UP THE FILE ORGANIZATION
                ORGANIZATION IS LINE SEQUENTIAL.
 
