@@ -6,8 +6,7 @@
        INPUT-OUTPUT SECTION.
        FILE-CONTROL.
       *ASSIGNING THE FILE TO THE LOCATION
-           SELECT Regi-Form ASSIGN TO 
-           "C:\Users\Ellen\Desktop\regicard.txt"
+           SELECT Regi-Form ASSIGN TO "regicard.txt"
       *SETTING UP THE FILE ORGANIZATION
                ORGANIZATION IS LINE SEQUENTIAL.
 
@@ -28,8 +27,6 @@
       *THIS IS WHERE THE PROGRAM STARTS AND PROCESS THE USER'S REQUEST
        PROCEDURE DIVISION.
        MAIN-PROCEDURE.
-      *OPENING THE FILE FOR WRITING
-           OPEN OUTPUT Regi-Form
            PERFORM WITH TEST AFTER UNTIL User-Choice = User-Choice
       *CLEARS THE SCREEN 
                DISPLAY X"1B" & "[2J"
@@ -48,15 +45,15 @@
                DISPLAY "6. BSED-Math"
                DISPLAY "7. BSME"
                DISPLAY "8. BSECE"
-               DISPLAY "9. BSPsych"
+               DISPLAY "9. BSPsych"2
                DISPLAY X"1B" & "[31m" "-----for diploma courses------"
                DISPLAY X"1B" & "[0m" "10. DIT"
                DISPLAY "11. DOMT"
-               DISPLAY "12. delete regiform"
-               DISPLAY "13. exit the program"
+               DISPLAY "12. exit the program"
                DISPLAY X"1B" & "[32m" "********************************"
                DISPLAY X"1B" & "[0m" "Enter your choice: "NO ADVANCING
                ACCEPT User-Choice
+               OPEN OUTPUT Regi-Form
       *CONDITIONS TO CHECK THE USER'S COURSE CHOICE     
            IF User-Choice = 1   
       *DISPLAYS IT IN THE ACTUAL .TXT FILE          
@@ -159,17 +156,8 @@
                ACCEPT User-Choice
                DISPLAY X"1B" & "[2J" 
                DISPLAY X"1B" & "[H"
+              
            ELSE IF User-Choice = 12
-               MOVE " " TO Regi-Item
-               WRITE Regi-Info
-               DISPLAY X"1B" & "[31m Record deleted"
-               DISPLAY X"1B" & "[0m" "Press Enter to continue..."
-               ACCEPT User-Choice
-               DISPLAY X"1B" & "[2J" 
-               DISPLAY X"1B" & "[H"
-               CLOSE Regi-Form
-               PERFORM MAIN-PROCEDURE
-           ELSE IF User-Choice = 13
                CLOSE Regi-Form
                DISPLAY X"1B" & "[2J" 
                DISPLAY X"1B" & "[H"
@@ -432,9 +420,6 @@
            END-PERFORM
       *CLOSES THE FILE AGAIN
            CLOSE Regi-Form
-      *LETS THE USER KNOW THAT THE INFORMATION IS SAVED IN THE .TXT FILE
-           DISPLAY " "
-           DISPLAY "*Information saved at Regicard.txt*"
            STOP RUN.
 
 
