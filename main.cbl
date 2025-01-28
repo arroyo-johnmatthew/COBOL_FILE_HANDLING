@@ -161,7 +161,7 @@
            ELSE IF User-Choice = 12
                MOVE " " TO Regi-Item
                WRITE Regi-Info
-               DISPLAY "Record deleted"
+               DISPLAY X"1B" & "[31m Record deleted"
                DISPLAY X"1B" & "[0m" "Press Enter to continue..."
                ACCEPT User-Choice
                DISPLAY X"1B" & "[2J" 
