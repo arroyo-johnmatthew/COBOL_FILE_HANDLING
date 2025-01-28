@@ -20,7 +20,7 @@
 
       *DECLARING THE VARIABLES TO BE USED IN THE PROGRAM
        WORKING-STORAGE SECTION.
-       01 User-Choice PIC X.
+       01 User-Choice PIC X(2).
        01 User-Grade PIC 9(3).
        01 EOF-Indicator PIC X VALUE 'N'.
 
@@ -51,6 +51,8 @@
                DISPLAY X"1B" & "[31m" "-----for diploma courses------"
                DISPLAY X"1B" & "[0m" "10. DIT"
                DISPLAY "11. DOMT"
+               DISPLAY "12. delete regiform"
+               DISPLAY "13. exit the program"
                DISPLAY X"1B" & "[32m" "********************************"
                DISPLAY X"1B" & "[0m" "Enter your choice: "NO ADVANCING
                ACCEPT User-Choice
@@ -156,6 +158,21 @@
                ACCEPT User-Choice
                DISPLAY X"1B" & "[2J" 
                DISPLAY X"1B" & "[H"
+           ELSE IF User-Choice = 12
+               MOVE " " TO Regi-Item
+               WRITE Regi-Info
+               DISPLAY "Record deleted"
+               DISPLAY X"1B" & "[0m" "Press Enter to continue..."
+               ACCEPT User-Choice
+               DISPLAY X"1B" & "[2J" 
+               DISPLAY X"1B" & "[H"
+               CLOSE Regi-Form
+               PERFORM MAIN-PROCEDURE
+           ELSE IF User-Choice = 13
+               CLOSE Regi-Form
+               DISPLAY X"1B" & "[2J" 
+               DISPLAY X"1B" & "[H"
+               STOP RUN
            ELSE
                DISPLAY " "
                DISPLAY X"1B" & "[31m" "Invalid choice"
@@ -281,10 +298,10 @@
                DISPLAY X"1B" & "[2J"
                DISPLAY X"1B" & "[H"
            ELSE IF User-Choice = "X" or User-Choice = "x"
-             DISPLAY X"1B" & "[2J" 
-             DISPLAY X"1B" & "[H"
-             CLOSE Regi-Form   
-             PERFORM MAIN-PROCEDURE
+               DISPLAY X"1B" & "[2J" 
+               DISPLAY X"1B" & "[H"
+               CLOSE Regi-Form   
+               PERFORM MAIN-PROCEDURE
            ELSE
                DISPLAY " "
                DISPLAY X"1B" & "[31m" "Invalid choice"
